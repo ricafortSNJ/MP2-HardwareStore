@@ -169,31 +169,48 @@
     </div>
   <!--[END][Navbar]-->
   
-    <!--[START][Offcanvas]-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          Your Cart is Empty!
-        </div>
-      </div>
+<!--[START][Offcanvas]-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="canvasCart">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="offCanvas_table">
+          <tr>
+            <td>Product 1</td>
+            <td>$10.00</td>
+            <td>2</td>
+            <td>$20.00</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Wishlist</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          Your Wishlist is Empty!
-        </div>
-      </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Wishlist</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="canvasWishlist">
+      Your Wishlist is Empty!
     </div>
-    <!--[END][Offcanvas]-->
+  </div>
+</div>
+<!--[END][Offcanvas]-->
 
   <!--[START][Body]-->
   <div class="container-fluid body-fluid">

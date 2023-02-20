@@ -13,7 +13,6 @@
     <script src="hs_js/addminus.js"></script>
     <script src="hs_js/tablinks.js"></script>
     <script src="hs_js/generate.js"></script>
-    <script src="hs_js/generate.js"></script>
     <script src="hs_js/shop.js"></script>
     <link rel="icon" type="image/x-icon" href="hs_images/general/dick.png">
     <title>Shop - Dick Hardware Store</title>
@@ -170,31 +169,48 @@
     </div>
   <!--[END][Navbar]-->
   
-    <!--[START][Offcanvas]-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          Your Cart is Empty!
-        </div>
-      </div>
+<!--[START][Offcanvas]-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="canvasCart">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="offCanvas_table">
+          <tr>
+            <td>Product 1</td>
+            <td>$10.00</td>
+            <td>2</td>
+            <td>$20.00</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Wishlist</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div>
-          Your Wishlist is Empty!
-        </div>
-      </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Wishlist</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="canvasWishlist">
+      Your Wishlist is Empty!
     </div>
-    <!--[END][Offcanvas]-->
+  </div>
+</div>
+<!--[END][Offcanvas]-->
 
   <!--[START][Body]-->
   <div class="container-fluid body-fluid">
@@ -226,7 +242,7 @@
                 </div>
               </div>
               <div class="m-1">
-                <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="6">Add to Cart</button>
               </div>
             </a>
             <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg" style="width: 210px; font-size: fit-content;" onclick=pageGenerate(7)>
@@ -243,7 +259,7 @@
                 </div>
               </div>
               <div class="m-1">
-                <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="7">Add to Cart</button>
               </div>
             </a>
           </div>
@@ -302,7 +318,7 @@
                       
                       </div>
                     </div>
-                    <div class="m-1">
+                    <div class="m-1" id="addCart">
                       <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
                     </div>
                   </div>

@@ -23,6 +23,7 @@ $(document).ready(function() {
   var prodPrice = $("#productPrice").html();
   var prodDescription = $("#productDescription").html();
   var prodInfo = $("#productInfo").html();
+  var addToCart = $("#addCart").html();
    $.each(products01, function(i, products01) {
     //console.log(products01.product_id);
       if (prodID == Number(products01.product_id)) {
@@ -35,7 +36,9 @@ $(document).ready(function() {
         prodDescription = products01.product_description;
         prodInfo = products01.product_info;
         prodImage = '<img src="' + products01.product_image + '"  class="m-4 img-fluid prodcard_shadow"/>';
-        prodLink =  '<h1 class="text-main py-5">Our Product Selections / <a href="shop.html" class="text-main">Shop<a> / ' + products01.product_name; + '</h1>'
+        prodLink =  '<h1 class="text-main py-5">Our Product Selections / <a href="shop.html" class="text-main">Shop<a> / ' + products01.product_name; + '</h1>';
+        addToCart = '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="'+ products01.product_id +'">Add to Cart</button>';
+
       }
     
   });
@@ -53,6 +56,7 @@ $(document).ready(function() {
   $('#productInfo').html(prodInfo);
   $('#productImage').html(prodImage);
   $('#generateLink').html(prodLink);
+  $('#addCart').html(addToCart);
 
 });
 

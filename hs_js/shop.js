@@ -104,7 +104,7 @@ $(document).ready(function() {
             content += '</div>';
             content += '</div>';
             content += '<div class="m-1">';
-            content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>';
+            content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="'+ product.product_id +'">Add to Cart</button>';
             content += '</div>';
             content += '</a>';
         }
@@ -149,7 +149,7 @@ function reSort02() {
             content += '</div>';
             content += '</div>';
             content += '<div class="m-1">';
-            content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>';
+            content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="'+product.product_id+'">Add to Cart</button>';
             content += '</div>';
             content += '</a>';         
 
@@ -168,7 +168,7 @@ function reSort02() {
               content += '</div>';
               content += '</div>';
               content += '<div class="m-1">';
-              content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>';
+              content += '<button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="'+ product.product_id +'">Add to Cart</button>';
               content += '</div>';
               content += '</a>';         
         
@@ -227,3 +227,82 @@ function reSort02() {
 // });
 
 // }
+
+
+$(document).ready(function () {
+
+    const currentCart = [
+        {
+          name: "product_1",
+          price: 19.99
+        },
+        {
+          name: "product_2",
+          price: 29.99
+        },
+        {
+          name: "product_3",
+          price: 39.99
+        }
+      ];
+
+
+    $(".add_to_cart").click(function (x) {
+        let productName = $(this).data('name');
+        let productAmount = 1;
+        let productPrice = 0;
+
+
+        // $.each(products, function(i, product) {
+        //     if (productID == product.product_id);
+            
+        // });
+
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].name == productName) {
+            productPrice = products[i].price;
+          }
+        }
+        
+        let productTotal = productAmount * productPrice;
+        console.log("Product Name:" + productName);
+        console.log("Product Price: ₱" + productPrice);
+        console.log("Product Amount:" + productAmount);
+        console.log("Product Total:" + productTotal);
+        console.log("===================================");
+        x.preventDefault();
+    });
+
+    var cartContent = $("#offCanvas_table").html();
+
+    $.each(products, function(i, product) {
+        // Output the product name and price
+        let productName = product.product_name;
+        let productPrice = product.product_price * 55;
+        let productID = product.product_id;
+
+        if (products.some(product => product.product_id.includes(productID))) {
+            //console.log(productBrand+ ' is in the product_brands array');
+            cartContent += '<tr>';
+            cartContent += '<td>'+ productName +'</td>';
+            cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
+            cartContent += '<td>1</td>';
+            cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
+            cartContent += '</tr>';   
+
+          }
+        
+    });
+    // Add new content to the existing content
+    
+    // Update the HTML of the div with the new content
+    $('#offCanvas_table').html(cartContent);
+
+    
+
+    // Function to print to Account Page
+    // Function to print to Cart
+    
+    
+});
+
