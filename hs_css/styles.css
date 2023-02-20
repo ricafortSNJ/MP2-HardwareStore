@@ -1,0 +1,204 @@
+/*--[Font Import]--*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@500&display=swap');
+
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+/*--[NAVBAR]--*/
+.fas-color {
+    color: rgb(203, 64, 70);
+}
+.nav-btn-bg {
+    background-color: rgb(203, 64, 70);
+}
+.search-bar:focus {
+    border-color: rgb(203, 64, 70);
+}
+.search-bar::placeholder {
+    color: rgb(203, 64, 70);
+}
+.tab-text-color {
+    color: rgb(203, 64, 70);
+}
+.nav-bg {
+    background-color: #effbfc;
+}
+.nav-link.active {
+    border-bottom: 3px solid rgb(203, 64, 70);
+    color: rgb(255, 255, 255);
+}
+
+.dropdown-menu {
+    background-color: rgb(244, 243, 242);
+}
+.dropdown:active {
+    color: rgb(203, 64, 70);
+}
+.dropdown:hover {
+    color: rgb(203, 64, 70);
+}
+.dropdown-item {
+    background-color: rgb(244, 243, 242);
+    color:rgb(0, 0, 0);
+}
+.dropdown-item:hover {
+    background-color: rgb(203, 64, 70);
+    color: rgb(255, 255, 255);
+}
+.dropdown-toggle:hover {
+    background-color: rgb(203, 64, 70);
+    color: rgb(255, 255, 255);
+}
+.nav-link:link {
+    color: inherit;
+}
+.nav-link:visited {
+    color: inherit;
+}
+.nav-link:hover {
+    color: rgb(203, 64, 70);
+}
+.nav-link:active {
+    color: rgb(203, 64, 70);
+}
+
+.navbar .nav-item.active > a,
+.navbar .nav-item.active > a:hover,
+.navbar .nav-item.active > a:focus {
+  color: rgb(203, 64, 70);
+}
+
+.nav-color-main {
+    color: rgb(203, 64, 70);
+}
+  
+  
+  
+
+/*--[BODY]--*/
+
+.body-fluid {
+    background-color: #f4f3f2;
+}
+.body-container {
+    background-color: #f4f3f2;
+}
+.body-image-border {
+    border: 2px solid #2b2a2f;
+}
+.body-category-bg {
+    background-color: rgb(230, 225, 221);
+}
+.body-category-border {
+    border: 2px solid rgb(255, 255, 255);
+}
+.body-category-border:hover {
+    border-color: rgb(203, 64, 70);
+}
+.body-heading {
+    text-decoration: none;
+    color: #2b2a2f;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(203, 64, 70);
+}
+
+.body_shadow {
+    box-shadow: 2px 2px 2px 2px #2b2a2f;
+}
+.img-inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*--[FOOTER]--*/
+.newsletter-btn {
+    border-color: #2b2a2f;
+    background-color: rgb(203, 64, 70);
+    color: #effbfc;
+}
+.newsletter-btn:hover {
+    border-color: #2b2a2f;
+    background-color: rgb(203, 64, 70);
+    color: #effbfc;
+}
+/*--[Fonts/Colors]--*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+  
+.font-heading {
+    font-family: 'Roboto Slab', serif;
+}
+
+.font-content {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-ft {
+    background-color: rgb(243, 238, 234);
+}
+
+/*--[Product Cards]--*/
+
+.prodcard {
+    color:#2b2a2f;
+}
+
+.prodcard_shadow {
+    box-shadow: 5px 5px 3px rgba(203, 64, 70, 0.6);
+}
+.prodcard_bg {
+    background-color: white;
+}
+
+.prodcard_btn {
+    border-color: #2b2a2f;
+    background-color: rgb(203, 64, 70);
+}
+.prodcard_btn:hover {
+    border-color: #2b2a2f;
+    background-color: rgb(203, 64, 70);
+}
+.text-main {
+    color: rgb(203, 64, 70);
+}
+
+/*--[Shop]--*/
+
+.shop-banner {
+    background-image: url(shop_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.65;
+}
+
+
+/*--[text]--*/ 
+.gray {
+    text-decoration: none;
+    color: black;
+}
+
+/*--[OffCanvas]--*/ 
+.offcanvas {
+    z-index: 5000;
+}
+
+
+/*--[Checkbox]--*/
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: rgb(203, 64, 70);
+    border-color: #6c757d;
+  }
+
+

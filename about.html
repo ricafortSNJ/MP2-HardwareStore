@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="...">
+    <link rel="stylesheet" href="hs_css/styles.css"/>
+    <link rel="icon" type="image/x-icon" href="hs_images/general/dick.png">
+    <script src="hs_js/countdown.js"></script>
+    <script src="hs_js/products_db_byCategory.js"></script>
+    <script src="hs_js/generate.js"></script>
+    <script src="hs_js/shop.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="..."></script> 
+    <title>About Us - Dick Hardware Store</title>
+</head>
+<body>
+
+  <!--[START][Navbar]-->
+  <div class="container-fluid nav-bg">
+    <!--[START][Navbar-Part 01]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2">
+            <a class="navbar-brand" href="#">
+              <img src="hs_images/navbar/banner.png" style="width: 250px"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-6 pt-3">
+            <div class="input-group mb-3 me-5">
+            <input type="text" class="form-control search-bar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search fas-color"></i></button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-3">
+            <ul class="navbar-nav d-flex justify-content-around">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-user fas-color"></i>
+                  </div>
+                  <h5>Register | Login</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasCart" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-shopping-cart fas-color"></i>
+                  </div>
+                  <h5>Cart</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasWishlist" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-heart fas-color"></i>
+                  </div>
+                  <h5>Wishlist</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[START][Navbar-Part 02]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+        <nav class="navbar navbar-expand-lg" style="padding-top: 0;">
+          <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+            <div class="col-lg-2  d-flex justify-content-center ms-3">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
+                  Shop by Categeries
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
+                  <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-6" style="font-size: 120%;">
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link active" href="bulk.html">Bulk Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex justify-content-center" style="font-size: 120%;">
+              <div class="navbar-nav ml-auto ms-1">
+                <a class="nav-link" href="#">Contact Us:  +63-907-599-5991</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+  <!--[END][Navbar]-->
+
+  <!--[START][Body]-->
+  <div class="container-fluid body-fluid">
+    <div class="container body-container pt-5">
+      <div class="row mb-3">
+        <div class="col-lg-12 pt-lg-5 text-center">
+          <h1 id="about" class="text-main">About Us</h1>
+        </div>
+        <hr>
+        <div class="col-lg-12 text-center">
+          <div class="row">
+            <div class="col-lg-6 pt-lg-5">
+              <p>
+              <h6><strong> Welcome to  <span><img src="hs_images/about/dick.png" style="width:20px" alt=""></span>Dick Hardware</strong></h6>
+                Where we strive
+                to be the <strong> one-stop shop for</strong> all your hardware and construction
+                needs. <br> We have been providing <strong>high-quality products</strong>  and excellent
+                customer service to our community for several years. <br> Our store
+                carries a wide variety of tools, equipment, and materials for both
+                professional contractors and do-it-yourself enthusiasts. <br> From
+                power tools to hand tools, plumbing and electrical supplies, to
+                construction materials such as cement, sand, and steel bars, we
+                have <strong>everything you need </strong> to get the job done right. 
+              </p>
+            </div>
+            
+            <div class="col-lg-6 mb-lg-5 img-fluid">
+              <img src="hs_images/about/about2.jpg" style="width: 100%" alt="" />
+            </div>
+        </div>
+      </div>
+        <div class="col-lg-12 text-center pt-lg-5 mt-lg-2" id="history"><h2 class="text-main">Our History</h2></div>
+        <hr>
+        <div class="row">
+        <div class="col-lg-6 img-fluid"><img src="hs_images/about/banner5lalakeengineer.jpg" style="width:100%" alt=""></div>
+        <div class="col-lg-6 pt-lg-5 mb-lg-5 text-center">
+          <p>
+           Our
+             <strong> knowledgeable and friendly staff</strong> are always ready to assist you in
+              finding the right products and answering any questions you may
+              have. We also offer delivery services to make it more convenient
+              for you to get the items you need. <strong> We are committed </strong>to providing
+              our customers with top-notch products and services at affordable
+              prices. We believe in building <strong>long-lasting relationships with our
+                clients,</strong>  and we will always go above and beyond to ensure their
+              satisfaction. <strong> Thank you</strong> for considering our hardware store for
+              your hardware and construction needs. We look forward to serving
+              you soon.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-12 pt-lg-5 img-fluid mx-auto">
+        <h4 class="text-center mb-lg-4 text-main">Making your Life Simple</h4>
+        <div class="row">
+          <div class="col-lg-2">
+            <iframe
+              width="200"
+              height="200"
+              src="https://www.youtube.com/embed/yYLaUlaLCvg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="text-center"> <b> DIY Cabinet and tools to help you.</b> </p>
+          </div>
+          <div class="col-lg-2">
+            <iframe
+              width="200"
+              height="200"
+              src="https://www.youtube.com/embed/7n_hoeRj5-Y"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="text-center"> <b>Power Tools na kailangan mo.</b> </p>
+          </div>
+          <div class="col-lg-2">
+            <iframe
+              width="200"
+              height="200"
+              src="https://www.youtube.com/embed/51JkaRtvMqg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="text-center"> <b>Murang Power tools for You!</b> </p>
+          </div>
+          <div class="col-lg-2">
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/4DlIa4AhxJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="text-center"> <b>Beginners Tools</b> </p>
+          </div>
+          <div class="col-lg-2">
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/Rs8MmmsdI0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="text-center"> <b>How to start</b> </p>
+          </div>
+          <div class="col-lg-2">
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/wVWuXrQ2Udo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="text-center"> <b>10 Best Home made Powertools</b> </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 pt-lg-5 text-center text-main"><h3>FAQ</h3></div>
+        <hr>
+        <div class="col-lg-6 offset-lg-3 text-center mb-lg-auto">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Question: Does your company supply carbon fiber for retrofitting?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: Yes, we have Uni Directional carbon fiber
+              <!-- <code>.accordion-flush</code> -->
+              in two sizes 200 gms/m2 and 600 gms/m2.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+            Question: Should we use fiberglass for waterproofing?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: Yes , and it will last more than the other conventional
+              ways.
+              <!-- <code>.accordion-flush</code> -->
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+            Question: Why should i get a professional help from a construction?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: Construction is a combination of multiple service elements.
+              <br />
+              <!-- <code>.accordion-flush</code> -->
+              it involves careful planning of the usage of hundreds of
+              building <br />
+              materials and services provided by multiple individual
+              contrators. <br />
+              A good contractor, wiht his expertise and experience in
+              building <br />
+              homes, takes utmost care in carefully purchasing the
+              construction <br />
+              materials and professionally combines them to create the best
+              possible <br />
+              house that suits your dream and budget.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+            Question: Can I use a personal check or money order?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: Our website currently accepts only the major credit cards, paypal, and bitcoin.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive"
+              aria-expanded="false"
+              aria-controls="flush-collapseFive"
+            >
+            Question: What are your delivery options?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingFive"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              We offer several delivery options, including standard shipping, express shipping, and overnight shipping. The delivery options available to you will depend on your location and the products you order.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSix">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSix"
+              aria-expanded="false"
+              aria-controls="flush-collapseSix"
+            >
+            Question: How much does shipping cost?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSix"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingSix"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: Shipping costs vary depending on the delivery option you choose, your location, and the size and weight of your order. You can view the shipping costs at checkout before placing your order.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSeven">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeven"
+              aria-expanded="false"
+              aria-controls="flush-collapseSeven"
+            >
+            Question: How long will it take for my order to arrive?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSeven"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingSeven"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Answer: The delivery time will depend on the shipping option you choose and your location. We aim to dispatch all orders within 1-2 business days, and standard shipping usually takes 3-5 business days to arrive. Express shipping and overnight shipping options are also available for faster delivery.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[END][Body]-->
+
+
+  <!--[START][Footer]-->
+  <footer>
+    <div class="container-fluid"  style="font-family: 'Roboto Slab', serif;">
+      <!--[START][Footer-Body]-->
+      <!--[START][Footer-Part 01]-->
+      <div class="container pt-4">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-5">
+            <div class="pb-3">
+              <img src="hs_images/footer/banner.png" style="width: 300px"/>
+              <p class="mt-3">Dick Hardware - locally owned hardware store. Find everything you need for your home improvement projects. Quality products and exceptional service. Visit us today!"</p>
+            </div>
+            <div>
+              <div class="col-sm-12">
+                <div class="content">
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                      <span class="input-group-btn">
+                        <button class="btn prodcard_btn" type="submit">Subscribe Now</button>
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h5>Quicklinks</h5>
+            <p>About Us</p>
+            <p>Contact</p>
+            <p>Deliveries</p>
+            <p>Shipping Information</p>
+            <p>Track Your Order</p>
+          </div>
+          <div class="col-lg-2">
+            <h5>Contact Us</h5>
+            <p>Main Branch Address</p>
+            <p>Phone: </p>
+            <p>Mobile: </p>
+            <p>Email: </p>
+          </div>
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5>Customer Support</h5>
+                <p>support@dickhardware.ph</p>
+              </div>
+              <div class="col-lg-12">
+                <h5>Preferences</h5>
+                <p class="btn">Dark Mode</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 02]-->
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-4">
+            <h5>Payment Methods</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/visa.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/mastercard.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/paypal.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/jcb.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/americanexpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/bitcoin.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-4">
+            <h5>Logistics</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/2go.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/j&texpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/fedex.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/dhl.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/ups.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-2">
+            <h5>Partnerships</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/kodego.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 03]-->
+      <div class="container pb-3">
+        <div class="row text-center" style="font-size: 75%;">
+          <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;">
+            <p class="mx-2">Terms of Use</p>
+            <p class="mx-2">Privacy Policy</p>
+            <p class="mx-2">Copyright Policy</p>
+            <p class="mx-2">Sitemap</p>
+          </div>
+          <div class="col-lg-12">
+            <p>©2023 Dick Hardware. Dick Hardware and the Dick Hardware logo are registered trademarks of Dick Hardware Corporation. All rights reserved.</p>
+          </div>
+          <div class="col-lg-12">
+            <p>For technical issues with this website, please call +63-999-999-9999 or Email Us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--[END][Footer]-->
+  
+  
+  <!--[SCRIPTS]-->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="..."></script>
+
+</body>
+</html>

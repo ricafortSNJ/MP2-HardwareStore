@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="test_javascript/functions.js"></script>
+    <title>Hardware Store</title>
+</head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex mx-auto my-2 my-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+
+
+    <div class="container mt-5 ">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4 text-bg-secondary p-3">
+            <h1>LOGIN FORM</h1> 
+            <form id="login_form">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                <label class="form-check-label" for="remember">Remember Me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <h3">Hello! Customer: </h3>
+            <h3 id="customerName1">Customer01</h3> 
+          </div>
+        </div>
+      </div>
+    
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 text-bg-secondary p-3"><h2>Bulk Order Form</h2>
+            <form id="order_form">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email1" name="email1" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-number">Contact Number:</label>
+                <input type="text" class="form-control" id="contact-number" name="contact-number" required>
+              </div>
+              <div class="form-group">
+                <label for="order-list">List of Orders:</label>
+                <textarea class="form-control" id="order-list" name="order-list" rows="5" required></textarea>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="sendCopy" name="sendCopy">
+                <label class="form-check-label" for="sendCopy">Send me a copy</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-bg-secondary p-3">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form id="newsletter">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email2" name="email2" required>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="container mt-5">
+        <div class="row">
+
+          <div class="col-md-4 text-bg-warning p-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="test_image/tool1.png" alt="Product 1">
+              <div class="card-header">
+                <h4 id="product_name" value="product_1" class="my-0 font-weight-normal">Product 1</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">₱19.99</h1>
+                <button type="button" class="btn btn-lg btn-block btn-primary add_to_cart" data-name="product_1">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 text-bg-warning p-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="test_image/tool2.png" alt="Product 2">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Product 2</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">₱29.99</h1>
+                <button type="button" class="btn btn-lg btn-block btn-primary add_to_cart" data-name="product_2">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 text-bg-warning p-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="test_image/tool3.png" alt="Product 3">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Product 3</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">₱39.99</h1>
+                <button type="button" class="btn btn-lg btn-block btn-primary add_to_cart" data-name="product_3">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+</body>
+</html>

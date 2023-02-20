@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha256-">
+    <link rel="stylesheet" href="hs_css/styles.css"/>
+    <script src="hs_js/products_db_byCategory.js"></script>
+    <script src="hs_js/generate.js"></script>
+    <script src="hs_js/shop.js"></script>
+    <link rel="icon" type="image/x-icon" href="hs_images/general/dick.png">
+    <title>Shop - Dick Hardware Store</title>
+</head>
+<body  onload="reSort02()">
+  <!--[START][Navbar]-->
+  <div class="container-fluid nav-bg">
+    <!--[START][Navbar-Part 01]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2">
+            <a class="navbar-brand" href="#">
+              <img src="hs_images/navbar/banner.png" style="width: 250px"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-6 pt-3">
+            <div class="input-group mb-3 me-5">
+            <input type="text" class="form-control search-bar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search fas-color"></i></button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-3">
+            <ul class="navbar-nav d-flex justify-content-around">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-user fas-color"></i>
+                  </div>
+                  <h5>Register | Login</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasCart" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-shopping-cart fas-color"></i>
+                  </div>
+                  <h5>Cart</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasWishlist" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-heart fas-color"></i>
+                  </div>
+                  <h5>Wishlist</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[START][Navbar-Part 02]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+        <nav class="navbar navbar-expand-lg" style="padding-top: 0;">
+          <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+            <div class="col-lg-2  d-flex justify-content-center ms-3">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
+                  Shop by Categeries
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
+                  <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-6" style="font-size: 120%;">
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link active" href="bulk.html">Bulk Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex justify-content-center" style="font-size: 120%;">
+              <div class="navbar-nav ml-auto ms-1">
+                <a class="nav-link" href="#">Contact Us:  +63-907-599-5991</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+  <!--[END][Navbar]-->
+
+  <!--[START][Body]-->
+  <div class="container-fluid body-fluid">
+
+    <div class="row mb-3 text-center">
+      <div class="col-lg-12 shop-banner">
+        <h1 class="text-main py-5">Our Product Selections</h1>
+      </div>
+    </div>
+    <div class="container body-container pt-5">
+
+      
+
+      <div class="row mb-3">
+
+        <!-- Visible on MD devices -->
+        <div class="col-lg-3 d-none d-md-block">
+          <div class="row">
+
+            <div>
+              <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                <form>
+                  <h2 class="text-start border-bottom border-3">Categories</h2>
+                  <label>
+                    <input type="checkbox" name="category" value="Power Drill" id="Power Drill" checked onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Power Drills</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Saws" id="Saws" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Saws</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Sanders" id="Sanders" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Sanders</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Hammers" id="Hammers" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Hammers</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Screwdrivers" id="Screwdrivers" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Screwdrivers</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Wrenches" id="Wrenches" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Wrenches</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Pliers" id="Pliers" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Pliers</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Measuring tools" id="Measuring tools" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Measuring Tools</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Tool Storage" id="Tool Storage" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Tool Storage</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Workbenches" id="Workbenches" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Workbenches</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Safety equipment" id="Safety equipment" onclick="chooseCat(value)">
+                    <h5 style="display: inline-block;">Safety Equipment</h5>
+                  </label>
+                  <br>
+                </form>
+              </div>
+            </div>
+
+            <div>
+              <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                <form>
+                  <h2 class="text-start border-bottom border-3">Brands</h2>
+                  <label>
+                    <input type="checkbox" name="category" value="Dewalt" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Dewalt</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Milwaukee" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Milwaukee</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Makita" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Makita</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Bosch" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Bosch</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Stanley" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Stanley</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Black+Decker" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Black&Decker</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Ridgid" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Ridgid</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Craftsman" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Craftsman</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Ryobi" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Ryobi</h5>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="checkbox" name="category" value="Snap-On" onclick="chooseBrand(value)">
+                    <h5 style="display: inline-block;">Snap-On</h5>
+                  </label>
+                  <br>
+                </form>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Visible only on XS devices -->
+        <div class="col-lg-3 d-block d-sm-none">
+          <div class="row">
+
+            <div class="accordion mt-3" id="shopAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="text-start border-bottom border-3">Categories</h2>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                      <form>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Power Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="hand-tools">
+                          <h5 style="display: inline-block;">Hand Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="safety-equipment">
+                          <h5 style="display: inline-block;">Measuring Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Electrical</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Woodwork</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Electrical</h5>
+                        </label>
+                        <br>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h2 class="text-start border-bottom border-3">Availability</h2>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                      <form>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">In stock</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="hand-tools">
+                          <h5 style="display: inline-block;">Out of stock</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="hand-tools">
+                          <h5 style="display: inline-block;">Custom order</h5>
+                        </label>
+                        <br>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h2 class="text-start border-bottom border-3">Price</h2>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                      <form>
+                        <div class="form-group row">
+                          <label for="price-min" class="col-form-label">Min Price:</label><br>
+                          <input type="number" class="form-control" id="price-min" name="price-min" placeholder="Enter min price">
+                        </div>
+                        <div class="form-group row">
+                          <label for="price-max" class="col-form-label">Max Price:</label><br>
+                            <input type="number" class="form-control" id="price-max" name="price-max" placeholder="Enter max price">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <h2 class="text-start border-bottom border-3">Product Type</h2>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                      <form>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Power Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="hand-tools">
+                          <h5 style="display: inline-block;">Hand Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="safety-equipment">
+                          <h5 style="display: inline-block;">Measuring Tools</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Electrical</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Woodwork</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Electrical</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Woodwork</h5>
+                        </label>
+                        <br>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <h2 class="text-start border-bottom border-3">Brands</h2>
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="col-lg-12 mt-3 px-2 text-bg-light">
+                      <form>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Bosch</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="hand-tools">
+                          <h5 style="display: inline-block;">DeWalt</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="safety-equipment">
+                          <h5 style="display: inline-block;">Makita</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Milwaukee</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Ridgid</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Stanley</h5>
+                        </label>
+                        <br>
+                        <label>
+                          <input type="checkbox" name="category" value="power-tools">
+                          <h5 style="display: inline-block;">Black & Decker</h5>
+                        </label>
+                        <br>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="col-lg-12 mt-4 px-2 text-bg-light  d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Set to Default</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        
+
+        <!-- PRODUCTS GALLERY START -->
+        <div class="col-lg-9 text-center">
+          <div class="col-lg-12 d-flex justify-content-start px-3 mt-2 pt-1" style="background-color: rgba(203, 64, 70, 0.7); color:white;">
+            <h5>Total Items Found</h5>
+          </div>
+          <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;" id="productGallery">
+            <!-- Template
+            <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg">
+              <div>
+                <img src="images/powertool.jpg" style="width: 180px" class="rounded-top p-3"/>
+              </div>
+              <div class="text-start prodcard">
+                <h5>Cordless Drill</h5>
+                <h6 class="text-muted">Bosch</h6>
+                <h5>⭐⭐⭐☆☆</h5>
+                <div class="col-lg-12 d-flex justify-content-around">
+                  <h5>₱799.99</h5>
+                  <p><span style="text-decoration: line-through;">₱1399.99</span></p>
+                </div>
+              </div>
+              <div class="m-1">
+                <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+              </div>
+            </a>
+            -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[END][Body]-->
+
+  <!--[START][Footer]-->
+  <footer>
+    <div class="container-fluid"  style="font-family: 'Roboto Slab', serif;">
+      <!--[START][Footer-Body]-->
+      <!--[START][Footer-Part 01]-->
+      <div class="container pt-4">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-5">
+            <div class="pb-3">
+              <img src="hs_images/footer/banner.png" style="width: 300px"/>
+              <p class="mt-3">Dick Hardware - locally owned hardware store. Find everything you need for your home improvement projects. Quality products and exceptional service. Visit us today!"</p>
+            </div>
+            <div>
+              <div class="col-sm-12">
+                <div class="content">
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                      <span class="input-group-btn">
+                        <button class="btn" type="submit">Subscribe Now</button>
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h5>Quicklinks</h5>
+            <p>About Us</p>
+            <p>Contact</p>
+            <p>Deliveries</p>
+            <p>Shipping Information</p>
+            <p>Track Your Order</p>
+          </div>
+          <div class="col-lg-2">
+            <h5>Contact Us</h5>
+            <p>Main Branch Address</p>
+            <p>Phone: </p>
+            <p>Mobile: </p>
+            <p>Email: </p>
+          </div>
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5>Customer Support</h5>
+                <p>support@dickhardware.ph</p>
+              </div>
+              <div class="col-lg-12">
+                <h5>Preferences</h5>
+                <p class="btn">Dark Mode</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 02]-->
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-4">
+            <h5>Payment Methods</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/visa.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/mastercard.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/paypal.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/jcb.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/americanexpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/bitcoin.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-4">
+            <h5>Logistics</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/2go.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/j&texpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/fedex.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/dhl.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/ups.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-2">
+            <h5>Partnerships</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/kodego.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 03]-->
+      <div class="container pb-3">
+        <div class="row text-center" style="font-size: 75%;">
+          <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;">
+            <p class="mx-2">Terms of Use</p>
+            <p class="mx-2">Privacy Policy</p>
+            <p class="mx-2">Copyright Policy</p>
+            <p class="mx-2">Sitemap</p>
+          </div>
+          <div class="col-lg-12">
+            <p>©2023 Dick Hardware. Dick Hardware and the Dick Hardware logo are registered trademarks of Dick Hardware Corporation. All rights reserved.</p>
+          </div>
+          <div class="col-lg-12">
+            <p>For technical issues with this website, please call +63-999-999-9999 or Email Us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--[END][Footer]-->
+  
+  
+  <!--[SCRIPTS]-->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="..."></script>
+
+</body>
+</html>

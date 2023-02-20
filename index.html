@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="...">
+    <link rel="stylesheet" href="hs_css/styles.css"/>
+    <link rel="icon" type="image/x-icon" href="hs_images/general/dick.png">
+    <script src="hs_js/countdown.js"></script>
+    <script src="hs_js/products_db_byCategory.js"></script>
+    <script src="hs_js/generate.js"></script>
+    <script src="hs_js/shop.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="..."></script>
+    <title>Home - Dick Hardware Store</title>
+</head>
+
+  <!--[START][Navbar]-->
+  <div class="container-fluid nav-bg">
+    <!--[START][Navbar-Part 01]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2">
+            <a class="navbar-brand" href="#">
+              <img src="hs_images/navbar/banner.png" style="width: 250px"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-6 pt-3">
+            <div class="input-group mb-3 me-5">
+            <input type="text" class="form-control search-bar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search fas-color"></i></button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-3">
+            <ul class="navbar-nav d-flex justify-content-around">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-user fas-color"></i>
+                  </div>
+                  <h5>Register | Login</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasCart" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-shopping-cart fas-color"></i>
+                  </div>
+                  <h5>Cart</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasWishlist" role="button">
+                  <div class=" d-flex justify-content-center">
+                    <i class="fas fa-heart fas-color"></i>
+                  </div>
+                  <h5>Wishlist</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[START][Navbar-Part 02]-->
+    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+        <nav class="navbar navbar-expand-lg" style="padding-top: 0;">
+          <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+            <div class="col-lg-2  d-flex justify-content-center ms-3">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
+                  Shop by Categeries
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
+                  <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
+                  <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-6" style="font-size: 120%;">
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link active" href="bulk.html">Bulk Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex justify-content-center" style="font-size: 120%;">
+              <div class="navbar-nav ml-auto ms-1">
+                <a class="nav-link" href="#">Contact Us:  +63-907-599-5991</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+  <!--[END][Navbar]-->
+
+  <!--[START][Body]-->
+  <div class="container-fluid body-fluid min-vh-100 ">
+    <div class="container body-container pt-5">
+      <!--[START][Body - Part 01 Banner]-->
+      <div class="row mb-5">
+        <div class="col-lg-12"  style="padding: 0;">
+          <img src="images/cover.png" style="width: 1500px;" class="img-fluid body-image-border"/>
+        </div>
+      </div>
+
+      <!--[START][Body - Part 02 Delivery]-->
+      <div class="row mb-5">
+        <div class="col-lg-12 d-flex justify-content-around" style="flex-wrap: wrap;">
+          <div class="col-lg-2">
+            <img src="hs_images/body/banner/rocket.png" style="width: 30px" class="img-inline mx-2"/>
+            <div class="img-inline">
+              <h6 class="text-main">Fast Delivery</h6>
+              <p>In Greater-Manila Area</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <img src="hs_images/body/banner/exchange.png" style="width: 30px" class="img-inline mx-2"/>
+            <div class="img-inline">
+              <h6 class="text-main">Change Items</h6>
+              <p>As per policy</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <img src="hs_images/body/banner/credit-card.png" style="width: 30px" class="img-inline mx-2"/>
+            <div class="img-inline">
+              <h6 class="text-main">Online Payment</h6>
+              <p>100% Secure</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <img src="hs_images/body/banner/support.png" style="width: 30px" class="img-inline mx-2"/>
+            <div class="img-inline">
+              <h6 class="text-main">24/7 Support</h6>
+              <p>Dedicated chat support</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <img src="hs_images/body/banner/gift.png" style="width: 30px" class="img-inline mx-2"/>
+            <div class="img-inline">
+              <h6 class="text-main">Daily Discounts</h6>
+              <p>Everyday is a sale!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--[START][Body - Part 03 Categories]-->
+      <div class="row mb-5">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <span class="text-center">
+            <h2 class="font-heading">Shop by Category</h2>
+            <p class="font-content">Find the right tool for the job</p>
+          </span>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;">
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Power Drill')">
+            <div>
+              <img src="hs_images/body/categories/powerdrill.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Power Drills</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Saws')">
+            <div>
+              <img src="hs_images/body/categories/saw.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Saws</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Sanders')">
+            <div>
+              <img src="hs_images/body/categories/sander.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Sanders</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Hammers')">
+            <div>
+              <img src="hs_images/body/categories/hammer.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Hammers</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Screwdrivers')">
+            <div>
+              <img src="hs_images/body/categories/screwdriver.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Screwdrivers</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Wrenches')">
+            <div>
+              <img src="hs_images/body/categories/wrench.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Wrenches</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Pliers')">
+            <div>
+              <img src="hs_images/body/categories/plier.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Pliers</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Levels')">
+            <div>
+              <img src="hs_images/body/categories/level.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Levels</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Measuring tools')">
+            <div>
+              <img src="hs_images/body/categories/measuringtool.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Measuring Tools</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Tool Storage')">
+            <div>
+              <img src="hs_images/body/categories/toolstorage.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Tool Storage</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Workbenches')">
+            <div>
+              <img src="hs_images/body/categories/workbench.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Workbenches</h5>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 body-heading" onclick="reSort('Safety equipment')">
+            <div>
+              <img src="hs_images/body/categories/safetyequipment.png" style="width: 180px" class="body-category-bg img-fluid p-4 rounded-circle body-category-border"/>
+            </div>
+            <div>
+              <h5>Safety Equipment</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!--[START][Body - Part 04 Hot Deals]-->
+      <div class="row mb-5">
+        <div class="col-lg-12">
+          <span class="text-start">
+            <h4 class="text-main">HOT DEALS</h4>
+            <h6>Time limited offers!</h6>
+          </span>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-between" style="flex-wrap: wrap;">
+          <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg" style="width: 210px; font-size: fit-content;" onclick=pageGenerate(1)>
+            <div>
+              <img src="hs_images/products/001.png" style="width: 180px" class="rounded-top p-3"/>
+            </div>
+            <div class="text-start prodcard">
+              <h5>Cordless Drill Set</h5>
+              <h6 class="text-muted">Bosch</h6>
+              <h5>⭐⭐⭐⭐⭐</h5>
+              <div class="col-lg-12 d-flex justify-content-around">
+                <h5>₱7149.99</h5>
+                <p><span style="text-decoration: line-through;">₱15599.99</span></p>
+              </div>
+            </div>
+            <div class="m-1">
+              <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg" style="width: 210px; font-size: fit-content;" onclick=pageGenerate(2)>
+            <div>
+              <img src="hs_images/products/002.png"  style="width: 180px" class="rounded-top p-3"/>
+            </div>
+            <div class="text-start prodcard">
+              <h5>Power Drill Kit</h5>
+              <h6 class="text-muted">DeWalt</h6>
+              <h5>⭐⭐⭐⭐⭐</h5>
+              <div class="col-lg-12 d-flex justify-content-around">
+                <h5>₱9899.45</h5>
+                <p><span style="text-decoration: line-through;">₱13999.99</span></p>
+              </div>
+            </div>
+            <div class="m-1">
+              <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg" style="width: 210px; font-size: fit-content;" onclick=pageGenerate(3)>
+            <div>
+              <img src="hs_images/products/003.png"  style="width: 180px" class="rounded-top p-3"/>
+            </div>
+            <div class="text-start prodcard">
+              <h5>Drill Driver Set</h5>
+              <h6 class="text-muted">Milwaukee</h6>
+              <h5>⭐⭐⭐⭐☆</h5>
+              <div class="col-lg-12 d-flex justify-content-around">
+                <h5>₱5499.99</h5>
+                <p><span style="text-decoration: line-through;">₱7799.99</span></p>
+              </div>
+            </div>
+            <div class="m-1">
+              <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg" style="width: 210px; font-size: fit-content;" onclick=pageGenerate(4)>
+            <div>
+              <img src="hs_images/products/004.png"  style="width: 180px" class="rounded-top p-3"/>
+            </div>
+            <div class="text-start prodcard">
+              <h5>Lithium-Ion Drill</h5>
+              <h6 class="text-muted">Makita</h6>
+              <h5>⭐⭐⭐⭐☆</h5>
+              <div class="col-lg-12 d-flex justify-content-around">
+                <h5>₱8799.99</h5>
+                <p><span style="text-decoration: line-through;">₱12999.99</span></p>
+              </div>
+            </div>
+            <div class="m-1">
+              <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+            </div>
+          </a>
+          <a href="#" class="text-center px-3 m-2 border-rounded prodcard_shadow prodcard_bg"  style="width: 210px; font-size: fit-content;" onclick=pageGenerate(5)>
+            <div>
+              <img src="hs_images/products/005.png"  style="width: 180px" class="rounded-top p-3"/>
+            </div>
+            <div class="text-start prodcard">
+              <h5>Corded Drill Driver</h5>
+              <h6 class="text-muted">Hitachi</h6>
+              <h5>⭐⭐⭐☆☆</h5>
+              <div class="col-lg-12 d-flex justify-content-around">
+                <h5>₱4949.45</h5>
+                <p><span style="text-decoration: line-through;">₱5599.99</span></p>
+              </div>
+            </div>
+            <div class="m-1">
+              <button type="button" class="btn btn-lg btn-block btn-primary btn-sm add_to_cart prodcard_btn" data-name="product_1">Add to Cart</button>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center mt-3">
+          <span class="text-center">
+            <h5>Offer Ends</h5>
+            <div id="countdown" style="font-size: 150%; color: #cb4046"></div>
+          </span>
+        </div>
+      </div>
+
+      <!--[START][Body - Part 05 Brands]-->
+      <!-- Visible on LG devices -->
+      <div class="row mb-5 d-none d-lg-block">
+        <div class="col-lg-12 d-flex justify-content-center" style="margin-bottom: -50px;">
+          <span class="text-center">
+            <h2 class="font-heading">Home to the Best Brands</h2>
+            <p class="font-content">Discover Quality and Reliability with Our Wide Range of Best Brands for Your Hardware Needs</p>
+          </span>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;">
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/dewalt.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/milwaukee.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/makita.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/bosch.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/stanley.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/black&decker.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/ridgid.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/craftsman.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/skil.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="hs_images/body/brand logo/hitachi.png" style="width: 250px" class="img-fluid p-4"/>
+          </div>
+        </div>
+      </div>
+
+
+      <!--[START][Body - Part 05 Reviews]-->
+      <div class="row mb-5">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <span class="text-center">
+            <h2 class="font-heading">Customer Reviews</h2>
+            <p class="font-content">See what our customers are saying about our hardware store</p>
+          </span>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div>
+                    <img src="hs_images/body/reviews/daiben.jpg" class="rounded-circle prodcard_shadow prodcard_bg" style="width: 150px"/>
+                  </div>
+                  <h5>Daiben Sanchez</h5>
+                  <p>Kodego Instructor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      
+
+      
+      
+      
+
+    </div>
+  </div>
+  <!--[END][Body]-->  
+
+  <!--[START][Footer]-->
+  <footer>
+    <div class="container-fluid"  style="font-family: 'Roboto Slab', serif;">
+      <!--[START][Footer-Body]-->
+      <!--[START][Footer-Part 01]-->
+      <div class="container pt-4">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-5">
+            <div class="pb-3">
+              <img src="hs_images/footer/banner.png" style="width: 300px"/>
+              <p class="mt-3">Dick Hardware - locally owned hardware store. Find everything you need for your home improvement projects. Quality products and exceptional service. Visit us today!"</p>
+            </div>
+            <div>
+              <div class="col-sm-12">
+                <div class="content">
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                      <span class="input-group-btn">
+                        <button class="btn" type="submit">Subscribe Now</button>
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h5>Quicklinks</h5>
+            <p>About Us</p>
+            <p>Contact</p>
+            <p>Deliveries</p>
+            <p>Shipping Information</p>
+            <p>Track Your Order</p>
+          </div>
+          <div class="col-lg-2">
+            <h5>Contact Us</h5>
+            <p>Main Branch Address</p>
+            <p>Phone: </p>
+            <p>Mobile: </p>
+            <p>Email: </p>
+          </div>
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5>Customer Support</h5>
+                <p>support@dickhardware.ph</p>
+              </div>
+              <div class="col-lg-12">
+                <h5>Preferences</h5>
+                <p class="btn">Dark Mode</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 02]-->
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-lg-4">
+            <h5>Payment Methods</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/visa.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/mastercard.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/paypal.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/jcb.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/americanexpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/bitcoin.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-4">
+            <h5>Logistics</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/2go.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/j&texpress.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/fedex.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/dhl.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+            <img class="border border-2 rounded" src="hs_images/footer/ups.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+          <div class="col-lg-2">
+            <h5>Partnerships</h5>
+            <img class="border border-2 rounded" src="hs_images/footer/kodego.png" style="width: 55px; padding-left: 10px; padding-right: 10px;"/>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!--[START][Footer-Part 03]-->
+      <div class="container pb-3">
+        <div class="row text-center" style="font-size: 75%;">
+          <div class="col-lg-12 d-flex justify-content-center" style="flex-wrap: wrap;">
+            <p class="mx-2">Terms of Use</p>
+            <p class="mx-2">Privacy Policy</p>
+            <p class="mx-2">Copyright Policy</p>
+            <p class="mx-2">Sitemap</p>
+          </div>
+          <div class="col-lg-12">
+            <p>©2023 Dick Hardware. Dick Hardware and the Dick Hardware logo are registered trademarks of Dick Hardware Corporation. All rights reserved.</p>
+          </div>
+          <div class="col-lg-12">
+            <p>For technical issues with this website, please call +63-999-999-9999 or Email Us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--[END][Footer]-->
+  
+  
+  <!--[SCRIPTS]-->
+
+  <!--[MISC][Dump]
+    <div class="row mb-4 bg-warning">
+        <div class="col-lg-12 border border-dark d-flex justify-content-center">
+          <span class="text-center">
+            <h5>NEWSLETTER SUBSCRIPTION</h5>
+            <p>Insert Caption Here</p>
+          </span>
+        </div>
+        <div class="col-lg-12 border border-dark d-flex justify-content-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 mx-auto text-bg-secondary p-3">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="newsletter">
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email2" name="email2" required>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 border border-dark d-flex justify-content-center">
+          <span class="text-center">
+            <h5>PROMO OFFER</h5>
+          </span>
+        </div>
+      </div>
+
+          <div class="row mb-3 bg-warning">
+        <div class="col-lg-4 border border-dark">
+          <h5>Feature 1</h5>
+          <p>Insert Description Here</p>
+        </div>
+        <div class="col-lg-8 border border-dark">
+          <h5>PRODUCT</h5>
+          <p>Insert Image Here</p>
+        </div>
+      </div>
+      
+      <div class="row mb-3 bg-warning">
+        <div class="col-lg-8 border border-dark">
+          <h5>PRODUCT</h5>
+          <p>Insert Image Here</p>
+        </div>
+        <div class="col-lg-4 border border-dark">
+          <h5>Feature 1</h5>
+          <p>Insert Description Here</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4 bg-warning">
+        <div class="col-lg-4 border border-dark">
+          <h5>Feature 1</h5>
+          <p>Insert Description Here</p>
+        </div>
+        <div class="col-lg-8 border border-dark">
+          <h5>PRODUCT</h5>
+          <p>Insert Image Here</p>
+        </div>
+      </div>
+
+            <div class="row mb-4 bg-warning">
+        <div class="col-lg-4 border border-dark d-flex justify-content-center">
+          <a href="#" class="text-center px-3">
+            <div>
+              <img src="images/powertool.jpg" style="width: 180px"/>
+            </div>
+            <div>
+              <p>Power Tools</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 border border-dark d-flex justify-content-center">
+          <a href="#" class="text-center px-3">
+            <div>
+              <img src="images/powertool.jpg" style="width: 180px"/>
+            </div>
+            <div>
+              <p>Power Tools</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 border border-dark d-flex justify-content-center">
+          <a href="#" class="text-center px-3">
+            <div>
+              <img src="images/powertool.jpg" style="width: 180px"/>
+            </div>
+            <div>
+              <p>Power Tools</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+
+
+
+
+            //Visible only on XS devices
+            <div class="row mb-4 bg-warning d-block d-sm-none"> 
+              <div class="col-lg-12 border border-dark d-flex justify-content-center">
+                <span class="text-center">
+                  <h3>Shop by Category</h3>
+                  <p>Insert Caption Here</p>
+                </span>
+              </div>
+              <div class="col-lg-12 border border-dark d-flex justify-content-center" style="flex-wrap: wrap;">
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+                <a href="#" class="text-center px-2">
+                  <div>
+                    <img src="images/powertool.jpg" style="width: 90px" class="rounded-circle body-category-border"/>
+                  </div>
+                  <div>
+                    <p>Power Tools</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+  [Dump]-->  
+  
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+Features to Add
+- AI/Chat Bot
+- "XYZ Recently Bought"
+- Working Searchbar
+- Return to Top Button
+- Cookies
+- Delivery Address
+- Admin Account
+- Edit Carousel Timer
+
+
+
+
+// center horizontally
+<div class="d-flex justify-content-center">...</div>
+
+// center vertically
+<div class="d-flex align-items-center">...</div>
+
+
+// bg-dark, bg-secondary bg-warning
+
+
+Top 10 hardware tool brands (in no particular order):
+
+DeWalt
+Milwaukee
+Makita
+Bosch
+Stanley
+Black+Decker
+Ridgid
+Craftsman
+Ryobi
+Snap-On
+
+12 most common hardware tool product categories:
+
+Power drills
+Saws (circular saws, jigsaws, reciprocating saws, etc.)
+Sanders (belt sanders, orbital sanders, etc.)
+Hammers
+Screwdrivers (manual and powered)
+Wrenches (adjustable, torque, socket, etc.)
+Pliers (needle-nose, lineman, slip-joint, etc.)
+Levels (bubble, laser, digital, etc.)
+Measuring tools (tape measures, rulers, calipers, etc.)
+Tool storage (toolboxes, tool bags, etc.)
+Workbenches and sawhorses
+Safety equipment (gloves, goggles, ear protection, etc.)
+
+Generate another 25 (one for each brand if possible) using the Safety equipment (gloves, goggles, ear protection, etc.) category. Start with 096
