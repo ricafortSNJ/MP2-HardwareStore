@@ -89,7 +89,7 @@ const productsBASE = [
       "product_price": 119.99,
       "product_description": "The 20V Max Cordless Drill from Black+Decker is a powerful and convenient tool for all your drilling needs. It features a lithium-ion battery that provides long-lasting power, and a 3/8-inch chuck that allows for easy bit changes. The drill also has a variable speed trigger for precision control, and a built-in LED work light for increased visibility in low-light conditions. With its lightweight and ergonomic design, the 20V Max Cordless Drill is perfect for use at home or on the job site.",
       "product_info": "Power Source: Battery-Powered\nChuck Size: 3/8 inch\nMaximum Speed: 1,500 RPM\nWeight: 2.7 lbs\nBattery Type: Lithium-Ion",
-      "product_image": "hs_images/products/noimage.jpg"
+      "product_image": "hs_images/products/008.png"
       },
       {
         "product_id": "9",
@@ -100,7 +100,7 @@ const productsBASE = [
       "product_price": 119.99,
       "product_description": "The Titanium Drill Set from Kobalt is a great value for any DIY enthusiast or homeowner. This set includes 14 titanium-coated drill bits that are designed to last longer and cut faster than standard drill bits. The set also comes in a durable carrying case for easy storage and organization. With its affordable price and high-quality construction, the Titanium Drill Set is a must-have for any tool collection.",
       "product_info": "Drill Bit Sizes: 1/16 inch to 3/8 inch\nCoating: Titanium\nNumber of Pieces: 14\nCase Included: Yes",
-      "product_image": "hs_images/products/noimage.jpg"
+      "product_image": "hs_images/products/009.png"
       },
       {
         "product_id": "10",
@@ -111,7 +111,7 @@ const productsBASE = [
         "product_price": 119.99,
         "product_description": "This variable speed drill from Craftsman is perfect for both novice and expert DIYers. With a powerful 7-amp motor and adjustable speed, you can easily drill through wood, metal, and other materials with precision and ease.",
         "product_info": "The Craftsman variable speed drill comes with a 1-year limited warranty. It has a maximum speed of 3,000 RPM and features a 3/8-inch keyless chuck for easy bit changes. The drill also has a lock-on button for continuous drilling and a reversible function for removing screws and bolts. It weighs just 4.2 pounds, making it easy to handle and maneuver for extended periods of time.",
-        "product_image": "hs_images/products/noimage.jpg"
+        "product_image": "hs_images/products/010.png"
       },
   // Saws
   {
@@ -122,7 +122,7 @@ const productsBASE = [
     "product_price": 119.99,
     "product_description": "Product Description currrently unavailable",
     "product_info": "Product Information currrently unavailable",
-    "product_image": "hs_images/products/noimage.jpg",
+    "product_image": "hs_images/products/11.png",
     "product_id": "11",
   },
   {
@@ -133,7 +133,7 @@ const productsBASE = [
     "product_price": 119.99,
     "product_description": "Product Description currrently unavailable",
     "product_info": "Product Information currrently unavailable",
-    "product_image": "hs_images/products/noimage.jpg",
+    "product_image": "hs_images/products/12.png",
     "product_id": "12",
   },
   {
@@ -144,7 +144,7 @@ const productsBASE = [
     "product_price": 119.99,
     "product_description": "Product Description currrently unavailable",
     "product_info": "Product Information currrently unavailable",
-    "product_image": "hs_images/products/noimage.jpg",
+    "product_image": "hs_images/products/13.png",
     "product_id": "13",
   },
   {
