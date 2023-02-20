@@ -20,7 +20,7 @@ const sorters = [
 
 const sorters01 = [
     {
-        "product_categories": ["Power Drill"],
+        "product_categories": [],
         "product_brands": []
     }
 ];
@@ -39,7 +39,7 @@ if (sorters01.some(sorter => sorter.product_categories.includes(categoryCurrent)
     console.log("Added");
   }
   
-  console.log(sorters01);
+  //console.log(sorters01);
   reSort02();
     
 }
@@ -58,7 +58,7 @@ if (sorters01.some(sorter => sorter.product_brands.includes(brandCurrent))) {
     console.log("Added");
   }
 
-  console.log(sorters01);
+  //console.log(sorters01);
   reSort02();
 }
 
@@ -85,9 +85,6 @@ $(document).ready(function() {
         let productImage = product.product_image;
         let productID = product.product_id;
         let currentCategory = localStorage.getItem("currentCategory");
-        console.log("This is Current Brand:"+ currentCategory);
-        
-        console.log("This is Brand:"+ productBrand);
         if (currentCategory == productCategory) {
             console.log(productName);
             console.log(productBrand);

@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="...">
     <link rel="stylesheet" href="hs_css/styles.css"/>
     <link rel="icon" type="image/x-icon" href="hs_images/general/dick.png">
-    <script src="hs_js/countdown.js"></script>
     <script src="hs_js/products_db_byCategory.js"></script>
     <script src="hs_js/generate.js"></script>
     <script src="hs_js/shop.js"></script>
+    <script src="hs_js/validate.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="..."></script> 
     <title>Bulk Order - Dick Hardware Store</title>
 </head>
 
   <!--[START][Navbar]-->
-  <div class="container-fluid nav-bg">
+  <div class="container-fluid nav-bg d-none d-sm-block">
     <!--[START][Navbar-Part 01]-->
     <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
       <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
         <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
           <div class="col-lg-2">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
               <img src="hs_images/navbar/banner.png" style="width: 250px"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
           <div class="col-lg-3">
             <ul class="navbar-nav d-flex justify-content-around">
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="registerLogin()">
                   <div class=" d-flex justify-content-center">
                     <i class="fas fa-user fas-color"></i>
                   </div>
@@ -125,6 +125,49 @@
     </div>
   </div>
   <!--[END][Navbar]-->
+
+  <!--[START][Navbar]-->
+  <!--[XS][Navbar]-->
+    <div class="container d-block d-sm-none" style="padding: 0; font-family: 'Roboto', sans-serif;">
+      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0; padding-top: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-center nav-bg pt-2" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2">
+            <a class="navbar-brand" href="index.html">
+              <img src="hs_images/navbar/banner.png" style="width: 250px"/>
+            </a>
+          </div>
+        </div>
+      </nav>  
+      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0; padding-top: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-center nav-bg" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2  d-flex justify-content-center ms-3">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
+                Shop by Categeries
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
+                <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  <!--[END][Navbar]-->
   
     <!--[START][Offcanvas]-->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
@@ -134,7 +177,7 @@
       </div>
       <div class="offcanvas-body">
         <div>
-          Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          Your Cart is Empty!
         </div>
       </div>
     </div>
@@ -146,17 +189,75 @@
       </div>
       <div class="offcanvas-body">
         <div>
-          Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          Your Wishlist is Empty!
         </div>
       </div>
     </div>
     <!--[END][Offcanvas]-->
 
   <!--[START][Body]-->
-  <div class="container-fluid bg-dark min-vh-100 ">
-    
+  <div class="container-fluid body-fluid min-vh-90">
+  
+    <div class="container body-container py-5 d-flex justify-content-center font-heading" style="flex-wrap: wrap;">
+      <div class="col-lg-8 p-2 py-5">
+        <div class="col-lg-12"  style="padding: 0;">
+          <img src="images/cover.png" style="width: 1500px;" class="img-fluid body-image-border"/>
+        </div>
+      </div>
+      <div class="col-lg-4 p-2 py-5">
+        <h2 class="text-main">Bulk Order Page</h2>
+        <form id="order-form" onsubmit="return validateBulk()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Contact Number:</label>
+            <input type="" class="form-control" id="phone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="order">Order:</label>
+            <textarea class="form-control" id="order" name="order" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary mt-2 btn-bg1" onclick="submitBulk()">Submit</button>
+        </form>
+      </div>
+    </div>
+  <!--[START][Modal - Bulk Order]-->
+    <div class="modal fade success-modal font-heading" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content success-modal font-heading prodcard_shadow">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">We received your Bulk Order Request!</h5>
+          </div>
+          <div class="modal-body">
+            <p>Thank you for choosing Dick Hardware! We'll be in touch shortly.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-bg1" data-dismiss="modal" onclick="closeModal()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--[END][Modal - Bulk Order]-->
   </div>
   <!--[END][Body]-->
+
+
+
+
+
+
+
+
 
   <!--[START][Footer]-->
   <footer>
@@ -174,17 +275,21 @@
               <div class="col-sm-12">
                 <div class="content">
                   <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Enter your email">
+                      <input type="email" class="form-control" id="newsletter" name="email" required>
                       <span class="input-group-btn">
-                        <button class="btn newsletter-btn" type="submit">Subscribe Now</button>
+                        <button class="btn newsletter-btn" type="submit" onclick="submitNewsletter()">Subscribe Now</button>
                       </span>
+                    </div>
+                    <div>
+                      <p class="mt-1 text-center text-main" >"Equip yourself with the best tools for any job."
+                      </p>
                     </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-2">
-            <h5 class="text-main">Quicklinks</h5>
+            <h5 class="text-main mt-2">Quicklinks</h5>
             <div class="mt-3">
               <a href="about.html" class="gray" target="_blank"
               >About Us</a>
@@ -207,7 +312,7 @@
             </div>
           </div>
           <div class="col-lg-2">
-            <h5 class="text-main">Contact Us</h5>
+            <h5 class="text-main mt-2">Contact Us</h5>
             <div class="row">
               <span>Main Branch Address: </span>
               <p>Tumbaga I, Purok 4, Saraiya Quezon </p>
@@ -225,7 +330,7 @@
           <div class="col-lg-2">
             <div class="row">
               <div class="col-lg-12">
-                <h5  class="text-main">Customer Support</h5>
+                <h5  class="text-main mt-2">Customer Support</h5>
                 <p>support@dickhardware.ph</p>
               </div>
               <div class="col-lg-12 mt-3">
@@ -305,6 +410,95 @@
     </div>
   </footer>
   <!--[END][Footer]-->
+<!--[START][Modal - Newsletter]-->
+<div class="modal fade success-modal font-heading" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content success-modal font-heading prodcard_shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subscribeModalLabel">Thank you for Subscribing!</h5>
+      </div>
+      <div class="modal-body">
+        <p>You will now receive regular updates on new products, promotions, and exclusive deals.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-bg1" data-dismiss="modal" onclick="closeModalSubscribe()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--[END][Modal - Newsletter]-->
+
+<!--[START][Modal - Login/Register]-->
+<div class="modal fade success-modal font-heading" id="successRegister" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content success-modal font-heading prodcard_shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Registration complete!</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-bg1" data-dismiss="modal" onclick="closeRegisterModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--[END][Modal - Login/Register]-->
+
+<!--[START][Modal - Login/Register]-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content prodcard_shadow font-heading">
+      <div class="modal-header">
+        <h5 class="modal-title text-main" id="loginModalLabel">Register/Login</h5>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active text-main register-shadow" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="true">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-main login-shadow" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">Login</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
+            <form id="register-form">
+              <div class="form-group">
+                <label for="register-name">Name:</label>
+                <input type="text" class="form-control" id="register-name" name="register-name" required>
+              </div>
+              <div class="form-group">
+                <label for="register-email">Email:</label>
+                <input type="email" class="form-control" id="register-email" name="register-email" required>
+              </div>
+              <div class="form-group">
+                <label for="register-password">Password:</label>
+                <input type="password" class="form-control" id="register-password" name="register-password" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-bg1 mt-2" onclick="submitRegister()">Register</button>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <form id="login-form">
+              <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" class="form-control" id="login-email" name="login-email" required>
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" class="form-control" id="login-password" name="login-password" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-bg1 mt-2">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--[END][Modal - Login/Register]-->
+
+
   
   
   <!--[SCRIPTS]-->

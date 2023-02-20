@@ -354,7 +354,7 @@ const productsBASE = [
     "product_name": "20oz Straight Claw Hammer",
     "product_category": "Hammers",
     "product_brand": "Makita",
-    "product_price": "$129.99",
+    "product_price": 119.99,
     "product_description": "Product Description currrently unavailable",
     "product_info": "Product Information currrently unavailable",
     "product_image": "hs_images/products/noimage.jpg",

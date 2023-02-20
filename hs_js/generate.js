@@ -24,9 +24,9 @@ $(document).ready(function() {
   var prodDescription = $("#productDescription").html();
   var prodInfo = $("#productInfo").html();
    $.each(products01, function(i, products01) {
-    console.log(products01.product_id);
+    //console.log(products01.product_id);
       if (prodID == Number(products01.product_id)) {
-        console.log(products01.product_name);
+        //console.log(products01.product_name);
         prodName = products01.product_name;
         prodBrand = products01.product_brand;
         prodCategory = products01.product_category;

@@ -201,4 +201,41 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #6c757d;
   }
 
+/*--[Forms]--*/
+textarea {
+    height: 50px;
+}
+
+.btn-bg1 {
+    background-color: rgb(203, 64, 70);
+    border-color: #6c757d;
+}
+.btn-bg1:link {
+    background-color: rgb(203, 64, 70);
+    border-color: #6c757d;
+}
+.btn-bg1:hover {
+    background-color: rgb(203, 64, 70);
+    border-color: #6c757d;
+}
+.success-modal {
+    border-color: rgb(203, 64, 70);
+}
+.register-shadow {
+    box-shadow: -5px -5px 3px rgba(203, 64, 70, 0.3);
+}
+.login-shadow {
+    box-shadow: -5px -5px 3px rgba(203, 64, 70, 0.3);
+
+
+}
+
+
+/*--[Dump]
+    //box-shadow: 5px 5px 3px rgba(203, 64, 70, 0.6);
+    //box-shadow: 5px 5px 3px rgba(203, 64, 70, 0.6);
+
+
+
+--*/
 
