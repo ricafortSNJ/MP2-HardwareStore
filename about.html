@@ -19,113 +19,139 @@
 </head>
 <body>
 
-  <!--[START][Navbar]-->
-  <div class="container-fluid nav-bg">
-    <!--[START][Navbar-Part 01]-->
-    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
-      <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
-        <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
-          <div class="col-lg-2">
-            <a class="navbar-brand" href="#">
-              <img src="hs_images/navbar/banner.png" style="width: 250px"/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="col-lg-6 pt-3">
-            <div class="input-group mb-3 me-5">
-            <input type="text" class="form-control search-bar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search fas-color"></i></button>
-            </div>
-          </div>
-          </div>
-          <div class="col-lg-3">
-            <ul class="navbar-nav d-flex justify-content-around">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <div class=" d-flex justify-content-center">
-                    <i class="fas fa-user fas-color"></i>
-                  </div>
-                  <h5>Register | Login</h5>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasCart" role="button">
-                  <div class=" d-flex justify-content-center">
-                    <i class="fas fa-shopping-cart fas-color"></i>
-                  </div>
-                  <h5>Cart</h5>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasWishlist" role="button">
-                  <div class=" d-flex justify-content-center">
-                    <i class="fas fa-heart fas-color"></i>
-                  </div>
-                  <h5>Wishlist</h5>
-                </a>
-              </li>
-            </ul>
+<!--[START][Navbar]-->
+<div class="container-fluid nav-bg">
+  <!--[START][Navbar-Part 01]-->
+  <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+    <nav class="navbar navbar-expand-lg" style="padding-bottom: 0;">
+      <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+        <div class="col-lg-2">
+          <a class="navbar-brand" href="#">
+            <img src="hs_images/navbar/banner.png" style="width: 250px"/>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="col-lg-6 pt-3">
+          <div class="input-group mb-3 me-5">
+          <input type="text" class="form-control search-bar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search fas-color"></i></button>
           </div>
         </div>
-      </nav>
-    </div>
-    <!--[START][Navbar-Part 02]-->
-    <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
-        <nav class="navbar navbar-expand-lg" style="padding-top: 0;">
-          <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
-            <div class="col-lg-2  d-flex justify-content-center ms-3">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
-                  Shop by Categeries
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
-                  <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
-                  <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
+        </div>
+        <div class="col-lg-3">
+          <ul class="navbar-nav d-flex justify-content-around">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class=" d-flex justify-content-center">
+                  <i class="fas fa-user fas-color"></i>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                <h5>Register | Login</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasCart" role="button">
+                <div class=" d-flex justify-content-center">
+                  <i class="fas fa-shopping-cart fas-color"></i>
+                </div>
+                <h5>Cart</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasWishlist" role="button">
+                <div class=" d-flex justify-content-center">
+                  <i class="fas fa-heart fas-color"></i>
+                </div>
+                <h5>Wishlist</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--[START][Navbar-Part 02]-->
+  <div class="container" style="padding: 0; font-family: 'Roboto', sans-serif;">
+      <nav class="navbar navbar-expand-lg" style="padding-top: 0;">
+        <div class="collapse navbar-collapse d-flex justify-content-between nav-bg" id="navbarNav"  style="padding: 0;">
+          <div class="col-lg-2  d-flex justify-content-center ms-3">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle nav-btn-bg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 120%;">
+                Shop by Categeries
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-size: 120%;">
+                <a class="dropdown-item" href="#" onclick="reSort('Power Drill')">Power Drills</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Saws')">Saws</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Sanders')">Sanders</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Hammers')">Hammers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Screwdrivers')">Screwdrivers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Wrenches')">Wrenches</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Pliers')">Pliers</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Levels')">Levels</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Measuring tools')">Measuring Tools</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Tool Storage')">Tool Storage</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Workbenches')">Workbenches</a>
+                <a class="dropdown-item" href="#" onclick="reSort('Safety equipment')">Safety Equipment</a>
               </div>
-            </div>
-            <div class="col-lg-6" style="font-size: 120%;">
-              <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link active" href="bulk.html">Bulk Order</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              </ul>
-            </div>
-            <div class="col-lg-3 d-flex justify-content-center" style="font-size: 120%;">
-              <div class="navbar-nav ml-auto ms-1">
-                <a class="nav-link" href="#">Contact Us:  +63-907-599-5991</a>
-              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
             </div>
           </div>
-      </nav>
+          <div class="col-lg-6" style="font-size: 120%;">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item disabled">
+              <a class="nav-link disabled" href="bulk.html">Bulk Order</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 d-flex justify-content-center" style="font-size: 120%;">
+            <div class="navbar-nav ml-auto ms-1">
+              <a class="nav-link" href="#">Contact Us:  +63-907-599-5991</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+  </div>
+</div>
+<!--[END][Navbar]-->
+
+  <!--[START][Offcanvas]-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+      </div>
     </div>
   </div>
-  <!--[END][Navbar]-->
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Wishlist</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+      </div>
+    </div>
+  </div>
+  <!--[END][Offcanvas]-->
 
   <!--[START][Body]-->
   <div class="container-fluid body-fluid">
@@ -447,7 +473,7 @@
                   <div class="input-group">
                     <input type="email" class="form-control" placeholder="Enter your email">
                       <span class="input-group-btn">
-                        <button class="btn prodcard_btn" type="submit">Subscribe Now</button>
+                        <button class="btn newsletter-btn" type="submit">Subscribe Now</button>
                       </span>
                     </div>
                 </div>
@@ -455,29 +481,74 @@
             </div>
           </div>
           <div class="col-lg-2">
-            <h5>Quicklinks</h5>
-            <p>About Us</p>
-            <p>Contact</p>
-            <p>Deliveries</p>
-            <p>Shipping Information</p>
-            <p>Track Your Order</p>
+            <h5 class="text-main">Quicklinks</h5>
+            <div class="mt-3">
+              <a href="about.html" class="gray" target="_blank"
+              >About Us</a>
+            </div>
+            <div class="mt-3">
+              <a href="about.html#history" class="gray" target="_blank"
+              >History</a>
+            </div>
+            <div class="mt-3">
+              <a href="about.html#flush-collapseFive" class="gray" target="_blank"
+              >Deliveries</a>
+            </div>
+            <div class="mt-3">
+              <a href="about.html#flush-collapseSix" class="gray" target="_blank"
+              >Shipping Information</a>
+            </div>
+            <div class="mt-3">
+              <a href="about.html#flush-collapseSeven" class="gray" target="_blank"
+              >Track Your Order</a>
+            </div>
           </div>
           <div class="col-lg-2">
-            <h5>Contact Us</h5>
-            <p>Main Branch Address</p>
-            <p>Phone: </p>
-            <p>Mobile: </p>
-            <p>Email: </p>
+            <h5 class="text-main">Contact Us</h5>
+            <div class="row">
+              <span>Main Branch Address: </span>
+              <p>Tumbaga I, Purok 4, Saraiya Quezon </p>
+            </div>
+            <div class="row">
+              <p>Phone: 785-7978</p>
+            </div>
+            <div class="row">
+              <p>Mobile: +63-907-599-5991</p>
+            </div>
+            <div class="row">
+              <p>Email: dickhardware@gmail.com</p>
+            </div>
           </div>
           <div class="col-lg-2">
             <div class="row">
               <div class="col-lg-12">
-                <h5>Customer Support</h5>
+                <h5  class="text-main">Customer Support</h5>
                 <p>support@dickhardware.ph</p>
               </div>
-              <div class="col-lg-12">
-                <h5>Preferences</h5>
-                <p class="btn">Dark Mode</p>
+              <div class="col-lg-12 mt-3">
+                <h5 class="text-main">Follow Us</h5>
+                <div class="text-left">
+                  <div class="row mt-2">
+                      <a href="https://www.twitter.com/" class="gray" target="_blank"
+                        ><img src="hs_images/footer/twitter.png" style="width: 15px"
+                      /> Twitter</a>
+                  </div>
+                  <div class="row mt-2">
+                      <a href="https://www.instagram.com/" class="gray" target="_blank"
+                        ><img src="hs_images/footer/instagram.png" style="width: 15px"
+                      /> Instagram</a>
+                  </div>
+                  <div class="row mt-2">
+                      <a href="https://discord.com/" class="gray" target="_blank"
+                        ><img src="hs_images/footer/discord.png" style="width: 15px"
+                      /> Discord</a>
+                  </div>
+                  <div class="row mt-2">
+                      <a href="https://github.com/" class="gray" target="_blank"
+                        ><img src="hs_images/footer/github.png" style="width: 15px"
+                      /> Github</a>
+                  </div>
+              </div>
               </div>
             </div>
           </div>
@@ -524,13 +595,14 @@
             <p>©2023 Dick Hardware. Dick Hardware and the Dick Hardware logo are registered trademarks of Dick Hardware Corporation. All rights reserved.</p>
           </div>
           <div class="col-lg-12">
-            <p>For technical issues with this website, please call +63-999-999-9999 or Email Us.</p>
+            <p>For technical issues with this website, please call +63-907-599-5991 or Email Us.</p>
           </div>
         </div>
       </div>
     </div>
   </footer>
   <!--[END][Footer]-->
+  
   
   
   <!--[SCRIPTS]-->
