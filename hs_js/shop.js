@@ -248,52 +248,26 @@ $(document).ready(function () {
 
 
     $(".add_to_cart").click(function (x) {
-        let productName = $(this).data('name');
-        let productAmount = 1;
-        let productPrice = 0;
+        let productNameID = $(this).data('name');
+        var cartContent = $("#offCanvas_table").html();
 
+        $.each(products, function(i, product) {
+            // Output the product name and price
+            let productName = product.product_name;
+            let productPrice = product.product_price * 55;
 
-        // $.each(products, function(i, product) {
-        //     if (productID == product.product_id);
+            if (product.product_id == productNameID) {
+                //console.log(productBrand+ ' is in the product_brands array');
+                cartContent += '<tr>';
+                cartContent += '<td>'+ productName +'</td>';
+                cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
+                cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
+                cartContent += '</tr>';   
+
+            }
             
-        // });
-
-        for (let i = 0; i < products.length; i++) {
-          if (products[i].name == productName) {
-            productPrice = products[i].price;
-          }
-        }
-        
-        let productTotal = productAmount * productPrice;
-        console.log("Product Name:" + productName);
-        console.log("Product Price: ₱" + productPrice);
-        console.log("Product Amount:" + productAmount);
-        console.log("Product Total:" + productTotal);
-        console.log("===================================");
-        x.preventDefault();
-    });
-
-    var cartContent = $("#offCanvas_table").html();
-
-    $.each(products, function(i, product) {
-        // Output the product name and price
-        let productName = product.product_name;
-        let productPrice = product.product_price * 55;
-        let productID = product.product_id;
-
-        if (products.some(product => product.product_id.includes(productID))) {
-            //console.log(productBrand+ ' is in the product_brands array');
-            cartContent += '<tr>';
-            cartContent += '<td>'+ productName +'</td>';
-            cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
-            cartContent += '<td>1</td>';
-            cartContent += '<td>₱'+ productPrice.toFixed(2) +'</td>';
-            cartContent += '</tr>';   
-
-          }
-        
-    });
-    // Add new content to the existing content
+        });
+        // Add new content to the existing content
     
     // Update the HTML of the div with the new content
     $('#offCanvas_table').html(cartContent);
@@ -302,6 +276,9 @@ $(document).ready(function () {
 
     // Function to print to Account Page
     // Function to print to Cart
+    });
+
+    
     
     
 });
